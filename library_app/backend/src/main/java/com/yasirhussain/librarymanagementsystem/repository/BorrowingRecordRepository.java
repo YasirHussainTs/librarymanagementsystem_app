@@ -7,6 +7,8 @@ import java.util.List;
 
 public interface BorrowingRecordRepository extends JpaRepository<BorrowingRecord, Long> {
 
+    BorrowingRecord findByBookIdAndPatronIdAndReturnDateIsNull(Long bookId, Long patronId);
+
     // Find all records for a specific book
     List<BorrowingRecord> findByBookId(Long bookId);
 
